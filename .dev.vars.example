@@ -1,0 +1,30 @@
+# Copy this to .dev.vars and fill in your values.
+# .dev.vars is gitignored and used by wrangler dev.
+
+# Hosted model provider
+ANTHROPIC_API_KEY=replace-me
+
+# Optional gateway token for remote access
+MOLTBOT_GATEWAY_TOKEN=replace-me
+
+# Local dev switches
+# DEV_MODE=true
+# DEBUG_ROUTES=true
+
+# Cloudflare Access for protected admin routes
+# CF_ACCESS_TEAM_DOMAIN=myteam.cloudflareaccess.com
+# CF_ACCESS_AUD=your-application-audience-tag
+
+# Optional persistence
+# R2_ACCESS_KEY_ID=replace-me
+# R2_SECRET_ACCESS_KEY=replace-me
+# CF_ACCOUNT_ID=replace-me
+
+# Developer API surface
+# TXTCLAW_PUBLIC_API_ENABLED=true
+# TXTCLAW_PUBLIC_API_KEYS=dev-key-change-me
+# TXTCLAW_PUBLIC_API_CORS_ORIGINS=https://app.example.com
+
+# Optional BYOK
+# TXTCLAW_BYOK_ENABLED=true
+# TXTCLAW_CREDENTIALS_MASTER_KEY=base64url-32-bytes

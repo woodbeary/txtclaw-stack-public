@@ -1,0 +1,55 @@
+{
+  "name": "txtclaw-stack-public",
+  "version": "1.0.0",
+  "type": "module",
+  "private": false,
+  "description": "Public mirror of a Cloudflare-hosted OpenClaw runtime and control plane",
+  "scripts": {
+    "build": "vite build",
+    "verify:warmup-bundle": "node scripts/verify-warmup-bundle.mjs",
+    "deploy": "pnpm run build && pnpm run verify:warmup-bundle && pnpm dlx wrangler deploy",
+    "dev": "vite dev",
+    "start": "wrangler dev",
+    "types": "wrangler types",
+    "typecheck": "tsc --noEmit",
+    "biome:check": "biome check .",
+    "biome:fix": "biome check --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@cloudflare/puppeteer": "^1.0.5",
+    "hono": "^4.11.6",
+    "jose": "^6.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/sandbox": "*",
+    "@cloudflare/vite-plugin": "^1.0.0",
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0",
+    "vitest": "^4.0.18",
+    "wrangler": "^4.50.0"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "cloudflare": {
+    "bindings": {
+      "ANTHROPIC_API_KEY": {
+        "description": "Primary model-provider key for the hosted runtime."
+      },
+      "MOLTBOT_GATEWAY_TOKEN": {
+        "description": "Token for gateway access. Generate with: openssl rand -hex 32"
+      }
+    }
+  }
+}
