@@ -1,12 +1,14 @@
-# TXT CLAW Stack Public
+# TXT CLAW Stack (public mirror)
 
-Cloudflare Worker + sandbox runtime for an OpenClaw-based agent gateway, with a protected admin UI, device pairing flow, persistent state, and a developer-facing HTTP/MCP surface.
+The runtime behind [TXT CLAW](https://github.com/woodbeary/rotary): a Cloudflare Worker and per-user Sandbox containers that give every user an always-on OpenClaw agent, plus a developer-facing HTTP and MCP surface. February 2026.
 
-Stack: TypeScript, Hono, React, Cloudflare Workers, Cloudflare Sandbox, Durable Objects, R2  
-I owned: runtime packaging, admin/control surface, pairing/auth flows, persistence strategy, public API shape, and the developer docs layer around it  
-Origin Lab relevance: productizing an agent runtime, building a reliable control plane, and exposing a clean API/MCP surface on top of a complex backend
+Stack: TypeScript, Hono, React, Cloudflare Workers, Cloudflare Sandbox, Durable Objects, R2
 
-![Architecture](./assets/architecture.png)
+**Built on:** Cloudflare's open-source [moltworker](https://github.com/cloudflare/moltworker), which provides the base Worker, Sandbox, R2 wiring, and admin UI, and [OpenClaw](https://github.com/openclaw/openclaw), the agent itself.
+
+**What I added:** one sandboxed agent per user, keyed through a Durable Objects directory; the SMS and iMessage channels; the public developer API with console keys, bring-your-own-key, rate limits, and traces; warm-sandbox keepalive; hardened R2 persistence; and the docs in this repo.
+
+For the product story, screenshots, and architecture, see the [TXT CLAW → Rotary showcase](https://github.com/woodbeary/rotary).
 
 ## What This Repo Shows
 
@@ -45,7 +47,6 @@ pnpm start
 - [`src/routes`](./src/routes): public routes, admin routes, and API entrypoints
 - [`src/txtclaw`](./src/txtclaw): runtime, credentials, limits, traces, and bridge logic
 - [`src/client`](./src/client): admin/control UI
-- [`assets/adminui.png`](./assets/adminui.png): admin surface snapshot
 
 ## Why This Matters
 
