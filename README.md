@@ -6,7 +6,7 @@ Stack: TypeScript, Hono, React, Cloudflare Workers, Cloudflare Sandbox, Durable 
 
 **Built on:** Cloudflare's open-source [moltworker](https://github.com/cloudflare/moltworker), which provides the base Worker, Sandbox, R2 wiring, and admin UI, and [OpenClaw](https://github.com/openclaw/openclaw), the agent itself.
 
-**What I added:** one sandboxed agent per user, keyed through a Durable Objects directory; the SMS and iMessage channels; the public developer API with console keys, bring-your-own-key, rate limits, and traces; warm-sandbox keepalive; hardened R2 persistence; and the docs in this repo.
+**What I added:** one sandboxed agent per user, keyed through a Durable Objects directory; the SMS and Apple Messages for Business channels; the public developer API with console keys, bring-your-own-key, rate limits, and traces; warm-sandbox keepalive; hardened R2 persistence; and the docs in this repo.
 
 For the product story, screenshots, and architecture, see the [TXT CLAW → Rotary showcase](https://github.com/woodbeary/rotary).
 
